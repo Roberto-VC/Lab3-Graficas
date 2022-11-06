@@ -1,4 +1,3 @@
-from copy import deepcopy
 import time
 import pygame   
 from OpenGL.GL import *
@@ -31,7 +30,9 @@ def vecinos(grid, x, y):
     
     
 def upgrade(grid):
-    nuevo = deepcopy(grid)
+    nuevo = set()
+    for x in grid:
+        nuevo.add(x)
     undead = {}
 
     for (x, y) in grid:
